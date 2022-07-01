@@ -1,0 +1,10 @@
+port: 8080
+mysql:
+  host: 127.0.0.1
+  port: 3306
+  database: live_wallpaper
+  user: root
+  password: mac900902
+redis:
+  host: 127.0.0.1
+  port: 6379
