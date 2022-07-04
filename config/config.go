@@ -8,9 +8,9 @@ import (
 
 func Setup() {
 	if gin.IsDebugging() {
-		viper.SetConfigFile("config_dev.yaml")
+		viper.SetConfigFile("./config/config_dev.yaml")
 	} else {
-		viper.SetConfigFile("config_prod.yaml")
+		viper.SetConfigFile("./config/config_prod.yaml")
 	}
 	err := viper.ReadInConfig()
 	if err != nil {

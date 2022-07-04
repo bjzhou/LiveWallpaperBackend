@@ -1,6 +1,9 @@
 package model
 
-import "gorm.io/gorm"
+import (
+	"gorm.io/gorm"
+	"time"
+)
 
 type Tag struct {
 	gorm.Model
@@ -16,9 +19,11 @@ type Category struct {
 
 type Video struct {
 	gorm.Model
-	Name       string   `json:"name"`
-	Url        string   `json:"url"`
-	CategoryID uint     `json:"-"`
-	Category   Category `json:"category"`
-	Tags       []Tag    `gorm:"many2many:video_tags" json:"tags"`
+	Name       string    `json:"name"`
+	Url        string    `json:"url"`
+	DlCount    int64     `json:"dl_count"`
+	FavUpdated time.Time `json:"-"`
+	CategoryID uint      `json:"-"`
+	Category   Category  `json:"category"`
+	Tags       []Tag     `gorm:"many2many:video_tags" json:"tags"`
 }
